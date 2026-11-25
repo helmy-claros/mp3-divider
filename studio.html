@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="studio-token" content="{{token}}"><title>Stemroom · Track separator</title><link rel="stylesheet" href="/static/studio.css"><script defer src="/static/studio.js"></script></head>
+<body><header><b class="brand"><i aria-hidden="true">≋</i> Stemroom</b><span>Local studio</span></header>
+<main><h1>Track separator<span>.</span></h1><p class="intro">Isolate an instrument or make a backing track from your song.</p>
+<section><h2>Audio source</h2><form id="importForm"><div class="tabs" aria-label="Source type"><button id="linkTab" type="button" aria-pressed="true">YouTube link</button><button id="fileTab" type="button" aria-pressed="false">Audio file</button></div>
+<div class="entry"><input id="url" type="url" aria-label="YouTube video URL" placeholder="Paste a YouTube video URL" required><input id="file" type="file" accept="audio/*,.mp3" aria-label="Choose an audio file" hidden><button class="primary">Load song</button></div></form>
+<div id="confirm" hidden><h3 id="song"></h3><label for="model">Separation model</label><div class="entry"><select id="model"><option value="hdemucs">4 stems · Vocals, drums, bass, other</option><option value="htdemucs_6s">6 stems · Adds guitar and piano</option></select><button class="primary" id="split">Separate tracks</button></div></div>
+<p id="status" role="status" aria-live="polite"></p></section>
+<section id="mixer" hidden><h2>Stem mixer</h2><div class="transport"><button id="play">Play</button><input type="range" id="seek" aria-label="Playback position" min="0" value="0" step=".05"><output id="clock"></output></div><div id="channels"></div><div class="exports"><button class="primary" id="export">Export mix as MP3</button><a id="zip">Download all WAVs</a></div></section></main>
+</body></html>
